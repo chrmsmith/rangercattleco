@@ -1,26 +1,30 @@
-@import "tailwindcss";
+/* src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bof-bg: #ffffff;
+  --bof-fg: #111827;      /* neutral-900 */
+  --bof-muted: #6b7280;   /* gray-500 */
+  --bof-border: #e5e7eb;  /* gray-200 */
+
+  /* Ranger brand colors (feel free to tweak) */
+  --bof-primary: #2C3E2B;   /* deep green */
+  --bof-on-primary: #ffffff;
+  --bof-accent: #CDA861;    /* warm gold */
+  --bof-on-accent: #111827;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html, body, #__next {
+  height: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+.bg-bg { background-color: var(--bof-bg); }
+.text-fg { color: var(--bof-fg); }
+.text-muted { color: var(--bof-muted); }
+.border-border { border-color: var(--bof-border); }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+.bg-brand { background-color: var(--bof-primary); color: var(--bof-on-primary); }
+.bg-accent { background-color: var(--bof-accent); color: var(--bof-on-accent); }
+
