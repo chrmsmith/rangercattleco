@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -48,7 +49,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // suppressHydrationWarning avoids warnings from extensions injecting attrs
   return (
     <html lang="en" className="h-full bg-bg text-fg" suppressHydrationWarning>
       <body
@@ -67,15 +67,15 @@ function SiteHeader() {
   return (
     <header className="border-b border-border bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
           <span className="inline-block h-9 w-9 rounded-full bg-brand" />
           <span className="text-lg font-semibold">Ranger Cattle Co</span>
-        </a>
+        </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm">
-          <a className="hover:opacity-80" href="/about">About</a>
-          <a className="hover:opacity-80" href="/products">Products</a>
-          <a className="hover:opacity-80" href="/products#newsletter">Newsletter</a>
-          <a className="hover:opacity-80" href="/contact">Contact</a>
+          <Link className="hover:opacity-80" href="/about">About</Link>
+          <Link className="hover:opacity-80" href="/products">Products</Link>
+          <Link className="hover:opacity-80" href="/products#newsletter">Newsletter</Link>
+          <Link className="hover:opacity-80" href="/contact">Contact</Link>
         </nav>
       </div>
     </header>
@@ -98,10 +98,10 @@ function SiteFooter() {
         <div className="text-sm">
           <div className="font-medium mb-2">Explore</div>
           <ul className="space-y-1">
-            <li><a className="hover:opacity-80" href="/about">About</a></li>
-            <li><a className="hover:opacity-80" href="/products">Products</a></li>
-            <li><a className="hover:opacity-80" href="/products#newsletter">Newsletter</a></li>
-            <li><a className="hover:opacity-80" href="/contact">Contact</a></li>
+            <li><Link className="hover:opacity-80" href="/about">About</Link></li>
+            <li><Link className="hover:opacity-80" href="/products">Products</Link></li>
+            <li><Link className="hover:opacity-80" href="/products#newsletter">Newsletter</Link></li>
+            <li><Link className="hover:opacity-80" href="/contact">Contact</Link></li>
           </ul>
         </div>
         <div className="text-sm">
@@ -116,5 +116,6 @@ function SiteFooter() {
     </footer>
   );
 }
+
 
 
