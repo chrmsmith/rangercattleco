@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "https://www.rangercattleco.com/:path*", "destination": "https://rangercattleco.com/:path*", "permanent": true }
+  ]
+}
